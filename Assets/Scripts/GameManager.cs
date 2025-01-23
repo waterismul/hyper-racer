@@ -112,5 +112,14 @@ private void InitializeRoadPool()
             _activeRoads.Add(road);
         }
     }
+
+    public void DestoryRoad(GameObject road)
+    {
+        road.SetActive(false);
+        _activeRoads.Remove(road);
+        _roadPool.Enqueue(road);
+    }
+
+
     #endregion
 }
