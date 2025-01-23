@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -12,6 +13,10 @@ public class GameManager : MonoBehaviour
     //ui관련
     [SerializeField] private MoveButton leftMoveButton;
     [SerializeField] private MoveButton rightMoveButton;
+    [SerializeField] private TextMeshProUGUI gasText;
+    
+    //자동차
+    private CarController _carController;
     
     //도로 오브젝트 풀
     private Queue<GameObject> _roadPool = new Queue<GameObject>();
@@ -19,6 +24,8 @@ public class GameManager : MonoBehaviour
     
     //도로 이동
     private List<GameObject> _activeRoads = new List<GameObject>(); //초기화
+    
+    
     
     //싱글톤관련코드
     public static GameManager _instance;
@@ -54,6 +61,8 @@ public class GameManager : MonoBehaviour
         
         //게임시작
         StartGame();
+        
+       
 
     }
 
@@ -64,6 +73,9 @@ public class GameManager : MonoBehaviour
         {
             activeRoad.transform.Translate(Vector3.back * Time.deltaTime); //땅이동
         }
+        
+        //Gas정보 출력
+        gasText.text = _carController.Gas.ToString();
     }
 
     private void StartGame()
@@ -72,11 +84,11 @@ public class GameManager : MonoBehaviour
        SpawnRoad(Vector3.zero);
         
         //자동차 생성
-        var carController = Instantiate(carPrefab, new Vector3(0, 0, -3f), Quaternion.identity).GetComponent<CarController>();
+        _carController = Instantiate(carPrefab, new Vector3(0, 0, -3f), Quaternion.identity).GetComponent<CarController>();
         
         //left right move button에 자동차 커트롤 기능적용
-        leftMoveButton.OnMoveButtonDown += () => carController.Move(-1f);
-        rightMoveButton.OnMoveButtonDown += () => carController.Move(1f);
+        leftMoveButton.OnMoveButtonDown += () => _carController.Move(-1f);
+        rightMoveButton.OnMoveButtonDown += () => _carController.Move(1f);
     }
     
     //도로 생성 및 관리

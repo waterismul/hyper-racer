@@ -974,8 +974,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -1185,6 +1185,7 @@ MonoBehaviour:
   roadPrefab: {fileID: 3898143904753488803, guid: 01a51cf010f376e45b8e4f50670dd3ac, type: 3}
   leftMoveButton: {fileID: 1291312092}
   rightMoveButton: {fileID: 101908960}
+  gasText: {fileID: 1284419425}
 --- !u!4 &1355216482
 Transform:
   m_ObjectHideFlags: 0
