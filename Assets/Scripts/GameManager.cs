@@ -57,6 +57,8 @@ public class GameManager : MonoBehaviour
             _instance = this;
             DontDestroyOnLoad(gameObject);
         }
+        
+        Time.timeScale = 5f; //속도 올리기
     }
     
     private void Start()
@@ -166,7 +168,9 @@ private void InitializeRoadPool()
         //가스 아이템 생성
         if (_roadIndex > 0 && _roadIndex%2==0)
         {
-            road.GetComponent < RoadController>().SpawnGas();
+            Debug.Log("Spawn Gas Road Index"+_roadIndex);
+            
+            road.GetComponent<RoadController>().SpawnGas();
         }
         
         //활성화 된 길을 움직이기 위해 List에 저장

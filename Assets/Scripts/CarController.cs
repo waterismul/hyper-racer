@@ -56,7 +56,6 @@ public class CarController : MonoBehaviour
         {
             gas += 30;
             
-            
             // 가스 아이템 숨기기
             other.gameObject.SetActive(false);
             

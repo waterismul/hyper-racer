@@ -8,8 +8,8 @@ using Random = UnityEngine.Random;
 public class RoadController : MonoBehaviour
 {
     [SerializeField] private GameObject[] gasObjects;
-
-    private void Start()
+    
+    private void OnDisable()//비활성화 될때마다 호출
     {
         //모든 가스 아이템 비활성
         foreach (var gasObject in gasObjects)
