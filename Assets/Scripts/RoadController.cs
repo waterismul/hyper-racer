@@ -9,7 +9,7 @@ public class RoadController : MonoBehaviour
 {
     [SerializeField] private GameObject[] gasObjects;
     
-    private void OnDisable()//비활성화 될때마다 호출
+    private void OnEnable()//비활성화 될때마다 호출
     {
         //모든 가스 아이템 비활성
         foreach (var gasObject in gasObjects)
@@ -49,8 +49,12 @@ public class RoadController : MonoBehaviour
     /// </summary>
     public void SpawnGas()
     {
+        
         int index = Random.Range(0, gasObjects.Length);
         gasObjects[index].SetActive(true);
+    
+
+        
     }
 
    

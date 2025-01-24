@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     private List<GameObject> _activeRoads = new List<GameObject>(); //초기화
     
     // 만들어지는 도로의 index
-    private int _roadIndex = 0;
+    private int _roadIndex;
     
     //상태
     public enum State{Start, Play, End}
@@ -106,6 +106,7 @@ public class GameManager : MonoBehaviour
 
     private void StartGame()
     {
+        _roadIndex = 0;
         //도로 생성
        SpawnRoad(Vector3.zero);
         
@@ -118,6 +119,7 @@ public class GameManager : MonoBehaviour
         
         //게임 상태를 Play로 변경
         GameState = State.Play;
+        InitializeRoadPool();
     }
 
     public void EndGame()
@@ -177,6 +179,7 @@ public class GameManager : MonoBehaviour
 
 private void InitializeRoadPool()
 {
+    _roadIndex = 0;
     for (int i = 0; i < _roadPoolSize; i++)
     {
         GameObject road = Instantiate(roadPrefab);
