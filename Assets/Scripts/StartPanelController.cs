@@ -9,8 +9,6 @@ public class StartPanelController : MonoBehaviour
     
     public void OnClickStartButton()
     {
-        
         OnStartButtonClick?.Invoke();
-        
     }
 }
