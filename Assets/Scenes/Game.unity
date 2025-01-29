@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 101908961}
   - component: {fileID: 101908960}
   m_Layer: 5
-  m_Name: RightButton
+  m_Name: RightMoveButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -618,7 +618,7 @@ Camera:
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 60
-  orthographic: 1
+  orthographic: 0
   orthographic size: 5
   m_Depth: -1
   m_CullingMask:
@@ -798,7 +798,7 @@ GameObject:
   - component: {fileID: 1291312093}
   - component: {fileID: 1291312092}
   m_Layer: 5
-  m_Name: LeftButton
+  m_Name: LeftMoveButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -929,7 +929,7 @@ GameObject:
   - component: {fileID: 1355216482}
   - component: {fileID: 1355216481}
   m_Layer: 0
-  m_Name: GamaManager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
